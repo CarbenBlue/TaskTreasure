@@ -2,18 +2,31 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #3498db; /* Blue color */
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/US_Dollar_sign_2.svg'), linear-gradient(to bottom, #3498db, #2980b9); /* Dollar sign SVG as pattern */
-    background-size: 40px 40px, cover;
-    background-position: 10px 10px;
-    background-repeat: repeat, no-repeat;
+    background-image: url('images/TaskTreasureLogo.jpg'), url('https://upload.wikimedia.org/wikipedia/commons/7/77/US_Dollar_sign_2.svg'), linear-gradient(to bottom, #3498db, #2980b9); /* Logo and dollar sign pattern */
+    background-size: contain, 40px 40px, cover;
+    background-position: center, 10px 10px, top left;
+    background-repeat: no-repeat, repeat, no-repeat;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     box-sizing: border-box;
+    color: black; /* Ensure the text color is visible */
+}
+
+/* Logo section */
+header {
+    width: 100%;
+    height: 150px;
+    background-image: url('images/TaskTreasureLogo.jpg'); /* Logo image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    padding-top: 40px;
 }
 
 h1 {
@@ -32,8 +45,8 @@ p {
 }
 
 button {
-    background-color: #28A745;
-    color: white;
+    background-color: #000000;
+    color: white; /* Ensure the button text is white */
     font-size: 1.2em;
     padding: 15px 30px;
     border: none;
@@ -51,14 +64,22 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Smooth fade-in effect */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+/* Dollar sign background using pseudo-element */
+body::before {
+    content: "$";
+    font-size: 50px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: -1; /* Ensure it stays in the background */
+    color: rgba(255, 255, 255, 0.3); /* Light color for the dollar signs */
+    animation: move-dollar 10s infinite linear;
 }
 
-.fade-in {
-    animation: fadeIn 1.5s ease-in-out;
+@keyframes move-dollar {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(100px, 100px); }
+    100% { transform: translate(0, 0); }
 }
 
 /* Sidebar Layout */
@@ -144,7 +165,7 @@ button:active {
 footer {
     margin-top: 50px;
     font-size: 1em;
-    color: #000; /* Changed footer text to black */
+    color: #333333;
     text-align: center;
     padding: 20px 0;
     background-color: #f5f5f5;
@@ -161,7 +182,7 @@ footer ul li {
 }
 
 footer ul li a {
-    color: black; /* Changed footer links to black */
+    color: black; /* Changed to black text color */
     text-decoration: none;
 }
 
@@ -185,26 +206,4 @@ body {
     background-image: url('https://www.example.com/your-image.jpg');
     background-size: cover;
     background-position: center center;
-}
-
-/* Logo in header */
-header {
-    background-image: url('C:/Users/carwa/Downloads/TaskTreasureLogo.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 150px;
-    width: 100%;
-    text-align: center;
-    padding-top: 20px;
-}
-
-header h1 {
-    color: #fff; /* White color for header text */
-    font-size: 2.5em;
-}
-
-/* Ensure logo is visible */
-header img {
-    display: block;
-    margin: 0 auto;
 }
