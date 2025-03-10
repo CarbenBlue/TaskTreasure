@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskTreasure - Freelance Jobs and Rewards</title>
+    <title>TaskTreasure - Freelance Jobs</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>TaskTreasure - Earn Rewards</h1>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h2>TaskTreasure</h2>
+        <div>
+            <a href="#about">About</a>
+            <a href="#tasks">Tasks</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+            <button id="darkModeToggle">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to TaskTreasure</h1>
+        <p>Your gateway to earning through freelance tasks!</p>
+        <button class="cta" onclick="showAlert()">Get Started</button>
     </header>
 
-    <main>
-        <section>
-            <h2>What We Offer</h2>
-            <p>Earn money by completing tasks, watching ads, and more!</p>
-        </section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>Why TaskTreasure?</h2>
+        <p>Earn money by completing small tasks, watching ads, and more!</p>
+    </section>
 
-        <section id="bitlabs-tasks">
-            <h2>Loading Offers...</h2> <!-- Placeholder until tasks load -->
-        </section>
-    </main>
+    <!-- Dynamic Task Listings -->
+    <section id="tasks">
+        <h2>Available Tasks</h2>
+        <div class="task-container" id="task-container"></div>
+    </section>
 
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <p>"TaskTreasure helped me earn extra cash during my free time!"</p>
+            <p>- Alex G.</p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>Email us at <a href="mailto:support@tasktreasure.com">support@tasktreasure.com</a></p>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 TaskTreasure | All Rights Reserved</p>
+        <p>&copy; 2025 TaskTreasure. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
