@@ -10,6 +10,8 @@ body {
     align-items: center;
     height: 100vh;
     box-sizing: border-box;
+    background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png'); /* Optional pattern */
+    background-size: cover;
 }
 
 h1 {
@@ -47,47 +49,23 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Add a smooth fade-in effect */
+/* Smooth fade-in effect */
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .fade-in {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Footer */
-footer {
-    margin-top: 50px;
-    font-size: 1em;
-    color: #333333;
-    text-align: center;
-    padding: 20px 0;
-}
-footer {
-    margin-top: 50px;
-    font-size: 1em;
-    color: #333333;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f5f5f5;
-}
-<!-- SideBar-->
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-}
-
+/* Sidebar Layout */
 .main-content {
     display: flex;
     margin: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
 }
 
 .sidebar {
@@ -121,17 +99,15 @@ body {
     color: #f7a13d;
 }
 
+/* Main content area */
 .content {
     flex-grow: 1;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
 }
-body {
-    background-color: #fafafa; /* light gray background */
-    background-image: url('https://www.transparenttextures.com/patterns/diagonal-stripes.png'); /* optional pattern */
-    background-size: cover;
-}
+
+/* Call-to-Action Section */
 .cta {
     text-align: center;
     margin: 50px 0;
@@ -150,16 +126,26 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    animation: bounce 1s infinite alternate;
 }
 
 .cta-button:hover {
     background-color: #f7a13d;
 }
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    margin-top: 50px;
+    font-size: 1em;
+    color: #333333;
     text-align: center;
+    padding: 20px 0;
+    background-color: #f5f5f5;
 }
 
 footer ul {
@@ -180,17 +166,8 @@ footer ul li a {
 footer ul li a:hover {
     color: #f7a13d;
 }
-body {
-    background-image: url('https://www.example.com/your-image.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-body {
-    position: relative;
-    padding: 0;
-    margin: 0;
-}
 
+/* Video background */
 video.bg-video {
     position: absolute;
     top: 0;
@@ -201,28 +178,9 @@ video.bg-video {
     z-index: -1;
 }
 
-.main-content {
-    position: relative;
-    z-index: 1;
-    padding: 20px;
-}
-.cta-button {
-    background-color: #333;
-    color: white;
-    font-size: 16px;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: bounce 1s infinite alternate;
-}
-
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-10px);
-    }
+/* Optional Styling for Background Image */
+body {
+    background-image: url('https://www.example.com/your-image.jpg');
+    background-size: cover;
+    background-position: center center;
 }
