@@ -15,7 +15,9 @@ darkModeToggle.addEventListener("click", () => {
 const tasks = [
     { name: "Watch a 5-min video", reward: "$0.50" },
     { name: "Complete a survey", reward: "$1.00" },
-    { name: "Sign up for a free trial", reward: "$2.50" }
+    { name: "Sign up for a free trial", reward: "$2.50" },
+    { name: "Write a product review", reward: "$1.50" },
+    { name: "Download and test an app", reward: "$2.00" }
 ];
 
 function displayTasks() {
