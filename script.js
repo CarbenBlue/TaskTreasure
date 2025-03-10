@@ -1,10 +1,9 @@
 console.log("Welcome to TaskTreasure!");
 
-// BitLabs API Configuration
+// BITLABS API Integration - Keeps Your Layout Clean
 const BITLABS_API_KEY = "9dde2b11-1e89-421d-8e15-0922d440d4eb";
-const BITLABS_USER_ID = "user_123"; // Replace with dynamic user ID if available
+const BITLABS_USER_ID = "user_123"; // Replace dynamically if needed
 
-// Fetch and Display BitLabs Tasks
 async function fetchBitLabsTasks() {
     try {
         const response = await fetch(`https://api.bitlabs.ai/v1/tasks?apikey=${BITLABS_API_KEY}&user_id=${BITLABS_USER_ID}`);
@@ -13,17 +12,19 @@ async function fetchBitLabsTasks() {
         if (data.tasks) {
             displayTasks(data.tasks);
         } else {
-            console.error("Error fetching tasks:", data);
+            console.error("No tasks found:", data);
         }
     } catch (error) {
-        console.error("Error connecting to BitLabs:", error);
+        console.error("Error fetching BitLabs tasks:", error);
     }
 }
 
-// Display Tasks in a Styled Way
+// Display BitLabs Tasks Without Changing Layout
 function displayTasks(tasks) {
-    const taskContainer = document.getElementById("task-container");
-    taskContainer.innerHTML = ""; // Clear existing tasks
+    const taskSection = document.getElementById("bitlabs-tasks");
+    if (!taskSection) return; // Prevent errors if section doesn't exist
+
+    taskSection.innerHTML = "<h2>Available Offers</h2>";
 
     tasks.forEach(task => {
         const taskElement = document.createElement("div");
@@ -33,14 +34,9 @@ function displayTasks(tasks) {
             <p>💰 Earn: <strong>${task.reward} Coins</strong></p>
             <a href="${task.link}" target="_blank" class="task-button">Start Task</a>
         `;
-        taskContainer.appendChild(taskElement);
+        taskSection.appendChild(taskElement);
     });
 }
 
-// Dark Mode Toggle
-document.getElementById("darkModeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-});
-
-// Fetch and display BitLabs tasks on page load
+// Load tasks when page is ready
 window.addEventListener("DOMContentLoaded", fetchBitLabsTasks);
