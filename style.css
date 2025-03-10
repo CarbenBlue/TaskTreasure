@@ -1,0 +1,210 @@
+/* Body and general layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #3498db; /* Blue color */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/US_Dollar_sign_2.svg'), linear-gradient(to bottom, #3498db, #2980b9); /* Dollar sign SVG as pattern */
+    background-size: 40px 40px, cover;
+    background-position: 10px 10px;
+    background-repeat: repeat, no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #000; /* Black text color for contrast */
+    font-size: 2.5em;
+    text-align: center;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.2em;
+    color: #000000; /* Black text color for contrast */
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #28A745;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Smooth fade-in effect */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Sidebar Layout */
+.main-content {
+    display: flex;
+    margin: 20px;
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #f7a13d;
+}
+
+/* Main content area */
+.content {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Call-to-Action Section */
+.cta {
+    text-align: center;
+    margin: 50px 0;
+    background-color: #f7a13d;
+    padding: 40px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.cta-button {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: bounce 1s infinite alternate;
+}
+
+.cta-button:hover {
+    background-color: #f7a13d;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    font-size: 1em;
+    color: #000; /* Changed footer text to black */
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: black; /* Changed footer links to black */
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #f7a13d;
+}
+
+/* Video background */
+video.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Optional Styling for Background Image */
+body {
+    background-image: url('https://www.example.com/your-image.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Logo in header */
+header {
+    background-image: url('C:/Users/carwa/Downloads/TaskTreasureLogo.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+header h1 {
+    color: #fff; /* White color for header text */
+    font-size: 2.5em;
+}
+
+/* Ensure logo is visible */
+header img {
+    display: block;
+    margin: 0 auto;
+}
