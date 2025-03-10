@@ -1,31 +1,163 @@
-/* Keep your existing styles, adding only these */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
 
-/* Task Cards for BitLabs Offers */
-.task-card {
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.5s ease;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar h2 {
+    color: #f7a13d;
+    font-size: 24px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f7a13d;
+}
+
+#darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url('images/TaskTreasureLogo.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+/* Call to Action Button */
+.cta {
+    margin: 20px 0;
+    background: #f7a13d;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.cta:hover {
+    background: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Section Styles */
+section {
+    width: 80%;
+    text-align: center;
+    padding: 50px 0;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #f7a13d;
+}
+
+/* Task Listings */
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.task {
     background: white;
     color: black;
     padding: 20px;
     border-radius: 10px;
-    width: 280px;
-    text-align: center;
-    margin: 15px auto;
+    width: 300px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.task-card h3 {
-    margin-bottom: 10px;
+.task:hover {
+    transform: translateY(-5px);
 }
 
-.task-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background: #f7a13d;
+/* Testimonials */
+.testimonial {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-.task-button:hover {
-    background: #e68a00;
+/* Dark Mode */
+.dark-mode {
+    background: #222;
+    color: #fff;
+}
+
+.dark-mode .task {
+    background: #333;
+    color: white;
 }
