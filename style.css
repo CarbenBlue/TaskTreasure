@@ -14,6 +14,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     background-repeat: repeat, repeat; /* Repeat the patterns */
+    z-index: 0; /* Ensure background is at the bottom */
 }
 
 h1 {
@@ -186,4 +187,6 @@ body {
     background-image: url('https://www.example.com/your-image.jpg');
     background-size: cover;
     background-position: center center;
+    position: relative;
+    z-index: 1; /* Ensure other elements are above background */
 }
