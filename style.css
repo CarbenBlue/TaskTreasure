@@ -31,24 +31,24 @@ p {
     margin-bottom: 30px;
 }
 
-button {
-    background-color: #000000;
-    color: black;
+/* Sign Up Button */
+#signup-form button {
+    background-color: #28A745; /* Original green color */
+    color: white; /* Text color remains white */
     font-size: 1.2em;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #218838;
+#signup-form button:hover {
+    background-color: #218838; /* Darker green on hover */
 }
 
-button:active {
-    transform: scale(0.98);
+#signup-form button:active {
+    transform: scale(0.98); /* Button scale on click */
 }
 
 /* Smooth fade-in effect */
@@ -119,9 +119,10 @@ button:active {
     color: white;
 }
 
+/* Get Started Button */
 .cta-button {
-    background-color: #333;
-    color: white;
+    background-color: #28A745; /* Set to green or original color */
+    color: white; /* Text color stays white */
     font-size: 16px;
     padding: 15px 30px;
     border: none;
@@ -132,7 +133,7 @@ button:active {
 }
 
 .cta-button:hover {
-    background-color: #f7a13d;
+    background-color: #218838; /* Darker green on hover */
 }
 
 @keyframes bounce {
@@ -161,7 +162,7 @@ footer ul li {
 }
 
 footer ul li a {
-    color: white;
+    color: #333333; /* Set to black for text color */
     text-decoration: none;
 }
 
