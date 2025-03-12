@@ -1,71 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskTreasure - Freelance Jobs</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskTreasure - Freelance Jobs & Rewards</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Sign Up Modal (Shown if not registered) -->
+  <div id="signup-modal" class="modal">
+    <div class="modal-content">
+      <h2>Create Your Account</h2>
+      <form id="signup-form">
+        <input type="text" id="signup-username" placeholder="Username" required />
+        <input type="email" id="signup-email" placeholder="Email" required />
+        <input type="password" id="signup-password" placeholder="Password" required />
+        <button type="submit" class="cta">Sign Up</button>
+      </form>
+    </div>
+  </div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <h2>TaskTreasure</h2>
-        <div>
-            <a href="#about">About</a>
-            <a href="#tasks">Tasks</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="#contact">Contact</a>
-            <button id="darkModeToggle">🌙</button>
-        </div>
-    </nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2>TaskTreasure</h2>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#tasks">Tasks</a>
+      <a href="#bitlabs-surveys">Surveys</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <button id="darkModeToggle">🌙</button>
+    </div>
+  </nav>
 
+  <!-- Main Content (Hidden until signup) -->
+  <div id="main-content" class="hidden">
     <!-- Hero Section -->
-    <header class="hero">
-        <h1>Welcome to TaskTreasure</h1>
-        <p>Your gateway to earning through freelance tasks!</p>
-        <button class="cta" onclick="showAlert()">Get Started</button>
+    <header class="hero" id="home">
+      <h1>Welcome to TaskTreasure</h1>
+      <p>Your gateway to earning through freelance tasks and surveys!</p>
+      <button class="cta" onclick="showAlert()">Get Started</button>
     </header>
 
     <!-- About Section -->
     <section id="about">
-        <h2>Why TaskTreasure?</h2>
-        <p>Earn money by completing small tasks, watching ads, and more!</p>
+      <h2>Why TaskTreasure?</h2>
+      <p>
+        Earn money by completing small tasks, watching ads, and taking surveys.
+        Our platform connects you with opportunities to earn rewards quickly and easily.
+      </p>
     </section>
 
-    <!-- Available Tasks -->
-    <section id="tasks">
-        <h2>Available Tasks</h2>
-        <div class="task-container" id="task-container"></div>
-    </section>
-
-    <!-- Survey Offers - Now Below Available Tasks -->
-    <section id="bitlabs-surveys" class="bitlabs-container">
-        <h2>Survey Offers</h2>
-        <p>Earn more rewards by completing surveys!</p>
-        <div id="bitlabs-task-list"></div>
-    </section>
-
-    <!-- Testimonials - Now Below Surveys -->
-    <section id="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial" id="testimonial-box">
-            <p id="testimonial-text">"TaskTreasure helped me earn extra cash during my free time!"</p>
-            <p id="testimonial-author">- Alex G.</p>
+    <!-- Features Section -->
+    <section id="features">
+      <h2>Our Features</h2>
+      <div class="feature-list">
+        <div class="feature">
+          <h3>Easy Tasks</h3>
+          <p>Complete simple tasks and surveys with minimal effort.</p>
         </div>
+        <div class="feature">
+          <h3>Instant Rewards</h3>
+          <p>Get paid instantly for your time and efforts.</p>
+        </div>
+        <div class="feature">
+          <h3>User Friendly</h3>
+          <p>Navigate through a sleek and modern interface designed for you.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Available Tasks Section -->
+    <section id="tasks">
+      <h2>Available Tasks</h2>
+      <div class="task-container" id="task-container">
+        <!-- Local tasks will be loaded here -->
+      </div>
+    </section>
+
+    <!-- BitLabs Survey Offers Section -->
+    <section id="bitlabs-surveys" class="bitlabs-container">
+      <h2>Survey Offers</h2>
+      <p>Earn extra rewards by completing surveys from our trusted partner.</p>
+      <div id="bitlabs-task-list">
+        <!-- BitLabs tasks will be loaded here -->
+        <p>Loading survey offers...</p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial" id="testimonial-box">
+        <p id="testimonial-text">"TaskTreasure helped me earn extra cash during my free time!"</p>
+        <p id="testimonial-author">- Alex G.</p>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2>Pricing & Rewards</h2>
+      <div class="pricing-plans">
+        <div class="plan">
+          <h3>Basic</h3>
+          <p>Free registration, access to all basic tasks.</p>
+        </div>
+        <div class="plan">
+          <h3>Premium</h3>
+          <p>Unlock bonus surveys and higher reward multipliers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How do I earn rewards?</h3>
+        <p>Complete tasks, surveys, and other activities to earn coins that can be redeemed for cash.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data secure?</h3>
+        <p>Yes, we use the latest encryption and security standards to protect your information.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I get paid?</h3>
+        <p>Redeem your coins for cash via PayPal or direct bank transfer once you reach the minimum threshold.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
-        <h2>Get in Touch</h2>
-        <p>Email us at <a href="mailto:support@tasktreasure.com">support@tasktreasure.com</a></p>
+      <h2>Get in Touch</h2>
+      <p>
+        Have questions? Email us at <a href="mailto:support@tasktreasure.com">support@tasktreasure.com</a>
+      </p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 TaskTreasure. All rights reserved.</p>
+      <p>&copy; 2025 TaskTreasure. All rights reserved.</p>
     </footer>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
