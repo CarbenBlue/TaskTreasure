@@ -30,15 +30,69 @@ document.getElementById("signup-form")?.addEventListener("submit", (e) => {
   alert(`Welcome ${username}! Your account code is ${userCode}`);
 });
 
-// On page load, show signup modal if user not logged in
-window.addEventListener("DOMContentLoaded", () => {
-  if (!isUserLoggedIn()) {
-    document.getElementById("signup-modal").style.display = "flex";
-  } else {
-    document.getElementById("signup-modal").style.display = "none";
-    document.getElementById("main-content").classList.remove("hidden");
-  }
+document.addEventListener("DOMContentLoaded", () => {
+    const signupSection = document.getElementById("signup-section");
+    const loginSection = document.getElementById("login-section");
+
+    const showLogin = document.getElementById("show-login");
+    const showSignup = document.getElementById("show-signup");
+
+    const signupForm = document.getElementById("signup-form");
+    const loginForm = document.getElementById("login-form");
+
+    // Toggle Between Login and Signup
+    showLogin.addEventListener("click", () => {
+        signupSection.style.display = "none";
+        loginSection.style.display = "block";
+    });
+
+    showSignup.addEventListener("click", () => {
+        loginSection.style.display = "none";
+        signupSection.style.display = "block";
+    });
+
+    // Sign Up Functionality
+    signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("signup-username").value;
+        const password = document.getElementById("signup-password").value;
+
+        const response = await fetch('/signup', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            alert("Account created! Logging you in...");
+            window.location.href = "account.html";
+        } else {
+            alert(data.message);
+        }
+    });
+
+    // Log In Functionality
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const username = document.getElementById("login-username").value;
+        const password = document.getElementById("login-password").value;
+
+        const response = await fetch('/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            window.location.href = "account.html";
+        } else {
+            alert("Invalid credentials!");
+        }
+    });
 });
+
 
 // ------------------------------
 // UI Interactions & Navigation
