@@ -44,7 +44,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar a:hover {
+.navbar a:hover { 
     color: #f7a13d;
 }
 
@@ -161,6 +161,7 @@ footer {
     background: #333;
     color: white;
 }
+
 /* BitLabs Container */
 .bitlabs-container {
     margin-top: 40px;
